@@ -57,27 +57,23 @@ This method can be only called once. Otherwise it will throw an Error.
 
 Splash screen should not be hidden before this method is called. Splash should wait the rendering of the initial screen
 
-# Stack Router
-Change the initial page of the router
+# Router Common
+Content of this topic is in [RouterCommon.md](./RouterCommon.md)
 
-```javascript
-const Application = require("sf-core/application");
-const StackRouter = require("sf-core/router/stack");
-const mainRouter = new StackRouter({
-    initialRoute: "page1", //optional, if not provided first element of the routes will be used
-    routes: [{
-        name: "page1",
-        target: require("pages/page1")
-    }, {
-        name: "page2",
-        target: require("pages/page2")
-    }]
-});
-Application.setupRouter(mainRouter);
-```
+# Stack Router
+Content of this topic is in [StackRouter.md](./StackRouter.md)
 
 # BottomTabBar Router
-da
+Content of this topic is in [BottomTabBarRouter.md](./BottomTabBarRouter.md)
 
 # SliderDrawer
 Content of this topic is in [SliderDrawer.md](./SliderDrawer.md)
+
+# General changes
+- Navigator to be removed
+- BottomTabBar to be evolved into BottomTabBar Router
+- Router to be changed
+- Documentations to be updated
+- sf-core major version needs to be updated
+- BC code suggestions to be proposed
+- Page and HeaderBar are to be changed
