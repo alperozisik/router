@@ -25,7 +25,7 @@ Application.setLeftDrawer(sliderDrawer);
 ### onDrawerRemove
 `(sliderDrawer, position) => {}`
 - **sliderDrawer** is the instance of the removed drawer
-- **position** is the [enumeration](http://ref.smartface.io/#!/api/UI.SliderDrawer.Position) where the drawer remvoed from.
+- **position** is the [enumeration](http://ref.smartface.io/#!/api/UI.SliderDrawer.Position) where the drawer removed from.
 
 ## Notes & Changes
 - A `SliderDrawer` instance can be added only to one side. In order to use both sides, two separate instances are to be created
