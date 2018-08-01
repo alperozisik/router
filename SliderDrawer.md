@@ -30,3 +30,6 @@ Application.setLeftDrawer(sliderDrawer);
 ## Notes & Changes
 - A `SliderDrawer` instance can be added only to one side. In order to use both sides, two separate instances are to be created
 - `SliderDrawer` instances will no longer have `position` property. Setting this has no effect.
+
+## Discussion
+- When to set SliderDrawer? Does it matter before or after `Application.setupRouter`?
