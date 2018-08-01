@@ -80,3 +80,4 @@ Application.setupRouter(mainRouter);
 da
 
 # SliderDrawer
+Content of this topic is in [SliderDrawer.md](./SliderDrawer.md)
