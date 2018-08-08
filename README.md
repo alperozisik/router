@@ -77,3 +77,8 @@ Content of this topic is in [SliderDrawer.md](./SliderDrawer.md)
 - sf-core major version needs to be updated
 - BC code suggestions to be proposed
 - Page and HeaderBar are to be changed
+
+# Other discussion
+- Master - Detail
+- StatusBar
+- SwipeView
