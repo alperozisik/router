@@ -11,7 +11,7 @@ class RouteMaybe extends Route {
   }
 
   isAccessable(path) {
-    this._route.isEqual(path) && (this.__route = this._notRoute);
+    !this._route.isAccessable(path) || (!this._notRoute.isAccessable(path)(this.__route = this._notRoute));
 
     return true;
   }

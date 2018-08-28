@@ -1,19 +1,22 @@
 var loginPageRoute = new Route("login", "login-page"); 
 var userProfileRoute = new Route("user/:name/profile", "home-page");
-var checkLoginRule = RuleRoute.defer((routeData) => UserService.isLoggedin());
-var checkLoginRoute = checkLoginRoute(userProfileRoute);
-var checkLoginMaybe = new RouteMaybe(checkLoginRoute, loginPageRoute);
 
-var components = [
+var screens = [
   // ---->
-  "login-page", 
+  "login-page",
   (routeData) => require("login-page"),
   // ---->
-  "home-page", 
+  "home-page",
   (routeData) => require("home-page"),
   // ---->
-  "user-settings", 
-  (routeData) => require("user-settings-page"),
+  "user-settings",
+  new RouteComponent({
+    screen: (routeData, routerState) => require("user-settings-page"),
+    drawer: (routeData, routerState) => new SliderDrawerComponent(),
+    transition: (routeData, routerState) => "transition type",
+    onEnter: (routeData, routerState) => ..., // maybe if it's needed
+    onExit: (routeData, routerState) => ... // maybe if it's needed
+  }),
   // ---->
   "user-profile", 
   (routeData) => require("user-profile-page"),
@@ -22,14 +25,21 @@ var components = [
   (routeData) => require("user-permissions-page")
 ];
 
-var stackRoot = new Route("user", "user-dashboard");
-var userSettings = new Route("user/settings", "user-settings");
-var userPremissions = new Route("user/settings/permissions", "user-permissions");
-var userProfile = new Route("user/profile", "user-profile");
+var stackRoute = new StackRoute(
+  "user",
+  "user-dashboard", // index screen of the Route
+  [
+    new StackRoute("settings", "user-settings"[
+      new Route("permissions", "user-permissions")
+    ]),
+    new Route("profile", "user-profile")
+  ]
+);
 
-Router.use(stackRoot, userSettings, userPremissions, userProfile);
+Router.use(stackRoute, loginPageRoute, userProfileRoute);
+
 // register page components
-Router.register(components);
+Router.register(screens);
 
 // register routes
 Router.use(checkLoginMaybe);

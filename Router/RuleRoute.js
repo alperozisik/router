@@ -14,7 +14,7 @@ class RuleRoute extends Route {
   }
 
   isAccessable(path){
-    return this._rule(parsePath(path)) && this._route.isEqual(path);
+    return this._rule(parsePath(path)) && this._route.isAccessable(path);
   }
 
   getRouteData(){
