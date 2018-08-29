@@ -1,0 +1,23 @@
+{
+  "name": "router",
+  "version": "1.0.0",
+  "description": "## Simple usage This explains how to use router at very basic level ### Initiation This happens in `app.js` ```javascript const Application = require(\"sf-core/application\"); const StackRouter = require(\"sf-core/router/stack\"); const mainRouter = new StackRouter({     routes: [{         name: \"page1\",         target: require(\"pages/page1\")     }, {         name: \"page2\",         target: require(\"pages/page2\")     }] }); Application.setupRouter(mainRouter); ```",
+  "main": "BottomTabBarRouter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alperozisik/router.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alperozisik/router/issues"
+  },
+  "homepage": "https://github.com/alperozisik/router#readme",
+  "dependencies": {
+    "mixin-deep": "^2.0.0"
+  }
+}

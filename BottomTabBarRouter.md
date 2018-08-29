@@ -94,8 +94,8 @@ function addItemToCart(/*arguments*/) {
     const page = this;
 
     const cartBadge = 
-    page.navigation // --> gives access to dashboardRouter
-        .navigation // --> gives access to btbRouter
+    page.routing // --> gives access to dashboardRouter
+        .routing // --> gives access to btbRouter
         .tabs.cart.badge;
     cartBadge.text = "2";
 }
@@ -103,8 +103,8 @@ function addItemToCart(/*arguments*/) {
 function goToCart() {
     const page = this;
 
-    page.navigation.navigation.tabs.cart.navigation.navigate("cart"); //Make sure that cartRouter is on the cart page
-    page.navigation.navigation.navigate("cart");
+    page.routing.routing.tabs.cart.routing.go("cart"); //Make sure that cartRouter is on the cart page
+    page.routing.routing.go("cart");
 }
 
 ```

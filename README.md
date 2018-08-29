@@ -19,10 +19,10 @@ const mainRouter = new StackRouter({
 Application.setupRouter(mainRouter);
 ```
 
-### Basic navigation
+### Basic routing
 This happens in `page1.js`
 ```javascript
-btn.onPress = ()=> page.navigation.navigate("page2");
+btn.onPress = ()=> page.routing.go("page2");
 ```
 
 ## Types of Routers
