@@ -82,4 +82,18 @@ class Router {
     getPaths() {
 
     }
+
+    /**
+     * @event - Triggered before page is shown
+     */
+    onShow() {
+
+    }
+
+    /**
+     * @event - Triggered after page his hidden
+     */
+    onHide() {
+
+    }
 }
