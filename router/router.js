@@ -96,4 +96,11 @@ class Router {
     onHide() {
 
     }
+
+    /**
+     * @event - Triggered before transtion of the page
+     */
+    onBeforeHideTranstition() {
+
+    }
 }
