@@ -51,8 +51,11 @@ page.routing.setHash();
 console.log(page.routing.path); // will log a
 ```
 - `setQuery` takes `object` or `string`
+    - if `object` is provided it will be automatically URI encoded.
+    - if `string` is provided it will not be automatically URI encoded. If the URL is not valid by the standarts of [Path Limits of Calling](./path#limits-of-calling) an error will be thrown
 - `setHash` takes `string`
 - all other types for both they will be converted to `string`
+    - it will be automatically URI encoded.
 - calling both of them without argument or with `undefined` will clear
 - both of them will fully replace query or hash
 
