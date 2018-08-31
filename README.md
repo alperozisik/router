@@ -9,10 +9,10 @@ const Application = require("sf-core/application");
 const StackRouter = require("sf-core/router/stack");
 const mainRouter = new StackRouter({
     routes: [{
-        name: "page1",
+        path: "page1",
         target: require("pages/page1")
     }, {
-        name: "page2",
+        path: "page2",
         target: require("pages/page2")
     }]
 });
@@ -26,9 +26,11 @@ btn.onPress = ()=> page.routing.go("page2");
 ```
 
 ## Types of Routers
-There are 2 types of routers
+There are 4 types of routers
 - Stack
 - BottomTabBar
+- Modal
+- Split
 
 SliderDrawer is a part of the application
 Stack Router handles both push and present actions based on the initiation parameter.
@@ -57,18 +59,6 @@ This method can be only called once. Otherwise it will throw an Error.
 
 Splash screen should not be hidden before this method is called. Splash should wait the rendering of the initial screen
 
-# Router Common
-Content of this topic is in [RouterCommon.md](./RouterCommon.md)
-
-# Stack Router
-Content of this topic is in [StackRouter.md](./StackRouter.md)
-
-# BottomTabBar Router
-Content of this topic is in [BottomTabBarRouter.md](./BottomTabBarRouter.md)
-
-# SliderDrawer
-Content of this topic is in [SliderDrawer.md](./SliderDrawer.md)
-
 # General changes
 - Navigator to be removed
 - BottomTabBar to be evolved into BottomTabBar Router
@@ -78,7 +68,5 @@ Content of this topic is in [SliderDrawer.md](./SliderDrawer.md)
 - BC code suggestions to be proposed
 - Page and HeaderBar are to be changed
 
-# Other discussion
-- Master - Detail
-- StatusBar
-- SwipeView
+# Changes List
+Most of the changes are listed in [Table of Content](./TOC.md)

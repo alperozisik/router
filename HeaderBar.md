@@ -9,7 +9,7 @@ This change will only occur for iOS side. Android will retain all of its HeaderB
 
 Those changes also will remove the confusion when to set the headerBar properties
 
-### Items to keep in HeaderBar (iOS)
+### Items to keep in HeaderBar (iOS) - navigationItem --> Page
 - title
 - leftItemEnabled
 - leftBarButtonItem
@@ -19,7 +19,7 @@ Those changes also will remove the confusion when to set the headerBar propertie
 - setItem
 - setRightItems
 
-### Items to remove from HeaderBar (iOS)
+### Items to remove from HeaderBar (iOS) - navigationController --> Router
 Following items will now be the property of StackRouter
 - titleColor
 - visible
@@ -30,6 +30,7 @@ Following items will now be the property of StackRouter
 - borderVisibility
 
 ## Removal of headerBar limitations
+
 Splitting the headerBar properties will enable the developers to use the HeaderBar items onLoad during constructor.
 
 
@@ -40,10 +41,10 @@ The flollowing code just updates the HeaderBar backgroundColor for iOS only.
 const StackRouter = require("sf-core/router/stack");
 const mainRouter = new StackRouter({
     routes: [{
-        name: "page1",
+        path: "page1",
         target: require("pages/page1")
     }, {
-        name: "page2",
+        path: "page2",
         target: require("pages/page2")
     }],
     headerBar: {
@@ -65,10 +66,10 @@ Each page can acces to the router which is showing them. Through that it is poss
 const StackRouter = require("sf-core/router/stack");
 const mainRouter = new StackRouter({
     routes: [{
-        name: "page1",
+        path: "page1",
         target: require("pages/page1")
     }, {
-        name: "page2",
+        path: "page2",
         target: require("pages/page2")
     }]
 });
@@ -81,5 +82,3 @@ page.onLoad = () => {
 };
 ```
 However the code above is changing the headerBar.backgroundColor for all pages for the same router in iOS.
-
-

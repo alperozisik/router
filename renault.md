@@ -17,18 +17,28 @@ Font.create("Default", 16, Font.BOLD);
 
 const dashboardRouter = new StackRouter({
     routes: [{
-        name: "dashboard",
+        path: "dashboard",
         target: require("pages/pgDashboard")
     }, {
-        name: "addVehicle",
+        path: "addVehicle",
         target: require("pages/pgAddVehicle")
     }]
+    onBeforeRouting: (routingOptions ) => {
+        if(routingOptions.path === "addVehicle") {
+            if(userLoggedIn) {
+                return true;
+            } else {
+                rootRouter.go("login");
+                return false;
+            }
+        }
+    }
 });
 
 
 const dealersRouter = new StackRouter({
     routes: [{
-        name: "cart",
+        path: "cart",
         target: require("pages/dealers")
     }
 });
@@ -62,50 +72,89 @@ const tabRouter = new BottomTabBarRouter({
 
 
 const mainRouter = new StackRouter({
-initialRoute:  userLoggedIn? "tabs": "pgPhoneEntry",
+    initialPath:  userLoggedIn? "tabs": "pgPhoneEntry",
     routes: [{
-        name: "pgPhoneEntry",
+        path: "pgPhoneEntry",
         target: pgPhoneEntry
     }, {
-        name: "pgSMS",
+        path: "pgSMS",
         target: pgSMS
     }, {
-        name: "tabs",
+        path: "tabs",
         target: tabRouter
-    }]
+    }
+    
+    ]
 });
 
 
 const loginRouter = new StackRouter({
-    initialRoute: "pgPhoneEntry",
+    initialPath: "pgPhoneEntry",
     routes: [{
-        name: "pgPhoneEntry",
+        path: "pgPhoneEntry",
         target: pgPhoneEntry
     }, {
-        name: "pgSMS",
+        path: "pgSMS",
         target: pgSMS
     }]
 });
 
 
-
-
-const rootRouter = new StackRouter({
-    initialRoute: "main",
-    routes: [{
-        name: "main",
+const rootRouter = new ModalRouter({
+    initialPath: "main",
+    routes: [
+    {
+        path: "main",
         target: mainRouter
-    }, {
-        name: "login",
+    },
+     {
+        path: "login",
         target: loginRouter
-    }],
-    mode: "modal"
+    }]
 });
+
+
 Application.setupRouter(rootRouter);
 
 ```
 
 If user has skipped the login and needs to login as a modal:
 ```javascript
-rootRouter.go("login");
+//pgDashboard
+onPress = () => {
+    if(loggedIn)
+        page.routing.go("addVehicle");
+    else
+        page.routing.go("/login");
+    page.routing.go("../dealers");
+}
+
+
+
+
 ```
+
+main
+    pgPhoneEntry
+    pgSMS
+    tabs
+        dashboard
+            dashboard <--
+            addVehicle
+        dealers
+            cart
+login
+    pgPhoneEntry
+    pgSMS
+
+
+user
+    :id
+category
+    :id
+    product
+        id
+
+
+
+
