@@ -47,7 +47,7 @@
 2. Other notable changes
     1. [HeaderBar](./HeaderBar.md)
     2. StatusBar
-    3. SliderDrawer
+    3. [SliderDrawer](./SliderDrawer.md)
     4. SwipeView 
     5. Android BackButton
     6. IDE approaches for the changes
