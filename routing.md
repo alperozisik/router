@@ -80,3 +80,6 @@ If `router.push` is used instead of `router.go` this **same path check** will no
 - `router.push("user/456")` will go to `instace Y`
 - `router.push("user/123?name=alper")` will go to `instace Z`
 
+# Routing Order
+For routing order it is kept in a separate file:
+[Routing Order](./routing-order.md)

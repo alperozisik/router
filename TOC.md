@@ -16,6 +16,7 @@
         4. _routing_ property
             1. Default behaviour
             2. stack
+        5. [Routing Order](./routing-order.md)
     4. [Combining Routers](./BottomTabBarRouter.md#example)
     5. [Path](./Path.md)
         1. Path rules
@@ -50,4 +51,5 @@
     3. [SliderDrawer](./SliderDrawer.md)
     4. SwipeView 
     5. Android BackButton
-    6. IDE approaches for the changes
+    6. Page.onShow
+    7. IDE approaches for the changes

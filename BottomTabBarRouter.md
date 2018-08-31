@@ -34,7 +34,8 @@ Some properties in the scaffold can have states. This is an optional behaviour t
 - **foussed** _optional_ - When the keyboard focus is on the tab or finger is pressing to the tab
 
 ## Path
-For limits of the path definition please refer to the [Path](./Path.md#limits-of-definition) guide
+For limits of the path definition please refer to the [Path](./Path.md#limits-of-definition) guide.
+In addition to those limits, it cannot have sub-paths and any paramters
 
 ## Badge
 _optional_  
