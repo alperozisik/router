@@ -102,7 +102,7 @@ Error("Instance cannot be shown again while it is in the stack")
 
 ## Path
 Path is the relative path of the component to the router. Path cannot start with: `/` or `.`. Those are used for relative path resolution.
-Path should never contain: `?`, `#` `\`, `&`, `@`
+For limits of the path definition please refer to the [Path](./Path.md#limits-of-definition) guide
 
 # Shared properties & methods & events
 - _method_ go

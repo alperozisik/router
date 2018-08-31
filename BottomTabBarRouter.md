@@ -34,10 +34,7 @@ Some properties in the scaffold can have states. This is an optional behaviour t
 - **foussed** _optional_ - When the keyboard focus is on the tab or finger is pressing to the tab
 
 ## Path
-Inheriting from the original scaffold, path of the tab has a some limitations:
-- it cannot contain following characters: `/`, `?`, `#` `\`, `:`, `&`, `@`
-- no path variables
-- no query variables
+For limits of the path definition please refer to the [Path](./Path.md#limits-of-definition) guide
 
 ## Badge
 _optional_  

@@ -14,6 +14,8 @@ Following properties are the properties of the routing:
 - absolutePath
 - path
 - stack
+- setQuery
+- setHash
 
 ## absolutePath
 Absolute full path of the routed item. Does not include any _URI query_ or _URI hash_ values if the target is not a page.
@@ -29,6 +31,30 @@ For more information please refer to the [data](./data.md) guide
 This is a special bound version of the [Router.setData](./RouterCommon.md#setData). `absolutePath` is not to be given while calling the function. 
 
 For more information please refer to the [data](./data.md) guide
+
+## Set query and hash
+Those metods are used for rewriting the query and hash segments of the URI. This will not cause changing of screen. This will just update the `path` and `absolutePath` values
+
+```javascript
+console.log(page.routing.path); // will log a?x=1
+page.routing.setQuery({
+    y: 4
+});
+console.log(page.routing.path); // will log a?y=4
+page.routing.setQuery("z=5&t=6");
+console.log(page.routing.path); // will log a?z=5&t=6
+page.routing.setQuery();
+console.log(page.routing.path); // will log a
+page.routing.setHash("alper");
+console.log(page.routing.path); // will log a#alper
+page.routing.setHash();
+console.log(page.routing.path); // will log a
+```
+- `setQuery` takes `object` or `string`
+- `setHash` takes `string`
+- all other types for both they will be converted to `string`
+- calling both of them without argument or with `undefined` will clear
+- both of them will fully replace query or hash
 
 ## stack
 If the owner router is not a tab router, stack property will be present (not `undefined`). Stack is an `array` containing all paths (relative to the router) including _URI path_ values. First item of the stack, is the first item of the array. By definition, last item in the array (stack) is same as the `path` property
@@ -50,3 +76,4 @@ If `router.push` is used instead of `router.go` this **same path check** will no
 - `router.push("user/123")` will go to `instace X`
 - `router.push("user/456")` will go to `instace Y`
 - `router.push("user/123?name=alper")` will go to `instace Z`
+

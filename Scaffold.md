@@ -34,9 +34,7 @@ Each scaffold object should can have following properties:
 Same as in [Router Common > Target](./RouterCommon.md#target)
 ## Path
 Paths are given as in URI path spesification. Path is the relative path of the component to the router.
-- Path cannot start with: `/` or `.`. Those are used for relative path resolution.
-- Path should never contain: `?`, `#` `\`, `&`, `@`
-- Upper level reference `../`, current level reference `./` should not be used at all
+For limits of the path definition please refer to the [Path](./Path.md#limits-of-definition) guide
 
 Similar to the [Express.js](https://expressjs.com/en/guide/routing.html) path parameters can be given.
 ```javascript {
