@@ -16,7 +16,7 @@
         4. _routing_ property
             1. Default behaviour
             2. stack
-    4. [Combining Routers](./BottomTabBarRouter.md#Example)
+    4. [Combining Routers](./BottomTabBarRouter.md#example)
     5. [Path](./Path.md)
         1. Path rules
         2. Traverse & Lookup
@@ -26,7 +26,7 @@
         3. Path & Query parameters
     7. Theming
         1. Stack Router HeaderBar
-        2. [BottomTabbar Router Tabs](./BottomTabBarRouter.md#Class)
+        2. [BottomTabbar Router Tabs](./BottomTabBarRouter.md#class)
     8. Events & Callbacks
         1. [onBeforeRoute callback](./onBeforeRoute.md)
             1. Transtitions
