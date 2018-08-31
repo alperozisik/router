@@ -26,7 +26,7 @@
         2. Getting Data
         3. Path & Query parameters
     7. Theming
-        1. Stack Router HeaderBar
+        1. [Stack Router HeaderBar](./HeaderBar.md#theming)
         2. [BottomTabbar Router Tabs](./BottomTabBarRouter.md#class)
     8. Events & Callbacks
         1. [onBeforeRoute callback](./onBeforeRoute.md)
@@ -47,9 +47,9 @@
         3. Deep-Linking
 2. Other notable changes
     1. [HeaderBar](./HeaderBar.md)
-    2. StatusBar
+    2. [StatusBar](./StatusBar.md)
     3. [SliderDrawer](./SliderDrawer.md)
-    4. SwipeView 
-    5. Android BackButton
-    6. Page.onShow
-    7. IDE approaches for the changes
+    4. [SwipeView](./SwipeView.md)
+    5. [Android BackButton](./AndroidBackButton.md)
+    6. [Page.onShow](./Page-onShow.md)
+    7. [IDE approaches for the changes](.IDE.md)

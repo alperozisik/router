@@ -33,6 +33,10 @@ Following items will now be the property of StackRouter
 
 Splitting the headerBar properties will enable the developers to use the HeaderBar items onLoad during constructor.
 
+## Theming
+The `headerBar` property of the **Stack** and **Split** routers are created context bound.
+- They can have classes
+- `dispatch` method can be used
 
 # Samples
 ## Setting headerbar properties in Router
