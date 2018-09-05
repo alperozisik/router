@@ -184,6 +184,7 @@ tab1OnBeforeRoute = routingOptions => {
 
 - path
 - Transitions: `enterTranstition`, `exitTranstition`
+- `getData` and `setData` are the bound versions
 - BottomTabBar related:
     - badge
     - text

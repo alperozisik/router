@@ -52,4 +52,4 @@
     4. [SwipeView](./SwipeView.md)
     5. [Android BackButton](./AndroidBackButton.md)
     6. [Page.onShow](./Page-onShow.md)
-    7. [IDE approaches for the changes](.IDE.md)
+    7. [IDE approaches for the changes](./IDE.md)

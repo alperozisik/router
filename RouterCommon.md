@@ -143,6 +143,15 @@ For the given path and the key, data is set removed. For more information please
 - **key** is a `string`, required.
 - **data** can be any value. If it is `undefined` key and value will be removed
 
+```javascript
+Application.router.setData("/tab/profile/editProfile", "key1", "John Doe");
+```
+Within the page _path is bound_
+```javascript
+page.routing.setData("key1"); //Clears
+```
+
+
 Behaviour:
 - Invalid path will throw `Error("Invalid Path")`
 - Non existing key to remove will not cause any error.

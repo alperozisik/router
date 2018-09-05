@@ -26,6 +26,14 @@ Path relative to the absolute path of the owner router. Does not include any _UR
 This is a special bound version of the [Router.getData](./RouterCommon.md#getData). 
 This can get all of the _URI_ parameter values. `absolutePath` is not to be given while calling the function.
 
+As an Idea for implementation:
+```javascript
+targetPage.routing = ObjectAssign({}, router, {
+    getData: router.getData.bind(router, path),
+    setData: router.setData.bind(router, path)
+});
+```
+
 For more information please refer to the [data](./data.md) guide
 ## setData
 This is a special bound version of the [Router.setData](./RouterCommon.md#setData). `absolutePath` is not to be given while calling the function. 
@@ -83,3 +91,7 @@ If `router.push` is used instead of `router.go` this **same path check** will no
 # Routing Order
 For routing order it is kept in a separate file:
 [Routing Order](./routing-order.md)
+
+# Useful Path resolving resources
+- https://medialize.github.io/URI.js/build.html
+- https://expressjs.com/en/guide/routing.html
