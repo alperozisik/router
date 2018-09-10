@@ -44,7 +44,9 @@
     9. Best practices
         1. [Renault](./renault.md)
         2. [Shopping](./Shopping.md)
-        3. Deep-Linking
+        3. [Deep-Linking](./Deep-Linking.md)
+        4. Singleton pages
+        5. Conditional pages
 2. Other notable changes
     1. [HeaderBar](./HeaderBar.md)
     2. [StatusBar](./StatusBar.md)
