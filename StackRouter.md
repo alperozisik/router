@@ -14,7 +14,16 @@ const mainRouter = new StackRouter({
     }, {
         path: "page2",
         target: require("pages/page2")
-    }]
+    },{
+        path: "page3",
+        target: "pages/page3"
+    },{
+        path: "page4",
+        target: () => require("pages/page4")
+    },{
+        path: "page5",
+        target: () => "pages/page2"
+    },]
 });
 Application.setupRouter(mainRouter);
 ```
