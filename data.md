@@ -41,6 +41,9 @@ Retrieved:
 ```javascript
 console.log(page.routing.getData("hash")); // alper
 ```
+
+All hash parameter values are string.
+
 ## Path parameter
 A page is defined with a path parameter such as `user/:userId`. Than `userID` is the key to that.
 
@@ -53,6 +56,8 @@ Retrieved:
 console.log(page.routing.getData("userId")); // 1234
 ```
 
+All path parameter values are string.
+
 ## Query parameter
 Query parameter is defined within the URL:
 ```javascript
@@ -64,6 +69,8 @@ Retrieved:
 console.log(page.routing.getData("key1")); // x
 console.log(page.routing.getData("key2")); // y
 ```
+
+All query parameter keys and values are string.
 
 ## Scaffold parameter
 Those parameters are defind within the scaffold of the route.
