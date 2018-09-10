@@ -23,7 +23,7 @@ const itemsRouter = new StackRouter({
     }, {
         path: "product/:productId",
         target: "pages/productDetails"
-    }]
+    }],
 });
 
 const checkoutRouter = new StackRouter({
@@ -56,7 +56,25 @@ const btbRouter = new BottomTabBarRouter({
     }, {
         path: "cart",
         target: checkoutRouter
-    }]
+    }],
+    onBeforeRoute: (routingOptions) => {
+        let paths = btbRouter.getPaths();
+        let targetPath = routingOptions.path.split("/")[0];
+        if (!paths.includes(targetPath)) {
+            let itemsPath = itemsRouter.getPaths();
+            let checkoutPaths = checkoutRouter.getPaths();
+            if (itemsPath.includes(targetPath)) {
+                routingOptions.path = "items/" + routingOptions.path;
+                return;
+            } else if(checkoutPaths.includes(targetPath)){
+                routingOptions.path = "cart/" + routingOptions.path;
+                return;
+            } else if(targetPath.startsWith("index") || targetPath === "") {
+                routingOptions.path = "items/showcase";
+                return;
+            }
+        }
+    }
 });
 
 const addressRouter = new StackRouter({
@@ -82,6 +100,7 @@ const addressRouter = new StackRouter({
     }]
 })
 
+
 const rootRouter = new ModalRouter({
     initialPath: "tabs",
     routes: [{
@@ -93,8 +112,20 @@ const rootRouter = new ModalRouter({
     }, {
         path: "address",
         target: addressRouter
-    }]
+    }],
+    onBeforeRoute: (routingOptions) => {
+        let paths = rootRouter.getPaths();
+        if (!paths.includes(routingOptions.path.split("/")[0])) {
+            routingOptions.path = "tabs/" + routingOptions.path;
+            return;
+        }
+    }
 });
 
 Application.setupRouter(rootRouter);
+```
+
+To go to a product details:
+```javascript
+Application.router.go("/product/1234");
 ```
