@@ -43,7 +43,7 @@
             2. [pageRemoved](./RouterCommon.md#remove)
     9. Best practices
         1. [Renault](./renault.md)
-        2. Shopping
+        2. [Shopping](./Shopping.md)
         3. Deep-Linking
 2. Other notable changes
     1. [HeaderBar](./HeaderBar.md)
