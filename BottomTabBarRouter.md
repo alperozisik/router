@@ -19,7 +19,7 @@ BottomTabBar can have only up to 5 tabs, at least 1 tab.
 BottomTabBar does not have `initialPath` property set via constructor.
 
 # Tab Scaffold
-Normally paths are defined as in a defined [Scaffold](./Scaffold.md). In addition to those scaffold, tabs has the following additional properties:
+Normally paths are defined as in a defined [Scaffold](./Scaffold.md). `tabs` is an alias for `routes`; either of them can be used. If both is used, `tabs` is favored. In addition to those scaffold, tabs has the following additional properties:
 - Badge
 - Text
 - Icon (has states)
