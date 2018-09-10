@@ -22,7 +22,7 @@ const itemsRouter = new StackRouter({
         target: "pages/pgProductListing"
     }, {
         path: "product/:productId",
-        target: "pages/productDetails"
+        target: "pages/pgProductDetails"
     }],
 });
 
@@ -129,3 +129,11 @@ To go to a product details:
 ```javascript
 Application.router.go("/product/1234");
 ```
+If the path is given like above, the path will be updated accordingly:
+1. `rootRouter.onBeforeRoute` will convert path from `product/1234` to `tabs/product/1234`
+2. `rootRouter.onBeforeRoute` will be fired for the second time with new path (`tabs/product/1234`), it will continue as is
+3. `rootRouter` will redirect the routing to `btbRouter`.
+4. `btbRouter` will convert the path from `product/1234` to `items/product/1234`
+5. `btbRouter.onBeforeRoute` will be fired for the second time with new path (`items/product/1234`), it will continue as is
+6. `btbRouter` will redirect the routing to `itemsRouter`
+7. `itemsRouter` will show `pgProductDetails` with the corresponding data. `page.routing.getData("productId")` will be `"1234"` within `pgProductDetails`
